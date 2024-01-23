@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 module.exports = (productManager) => {
-    // Ruta GET /api/products ---- se listan todos los productos con o sin un limite de muestra
+    // Ruta GET /api/products - se listan todos los productos con o sin un limite de muestra
     router.get('/', async (req, res) => {
         try {
             const limit = parseInt(req.query.limit)
@@ -14,7 +14,7 @@ module.exports = (productManager) => {
         }
     })
 
-    // Ruta GET /api/products/:pid ---- se obtiene un producto por su id
+    // Ruta GET /api/products/:pid - se obtiene un producto por su id
     router.get('/:pid', async (req, res) => {
         try {
             const productId = parseInt(req.params.pid)
@@ -30,7 +30,7 @@ module.exports = (productManager) => {
         }
     })
 
-    // Ruta POST /api/products ---- se añade un producto
+    // Ruta POST /api/products - se añade un producto
     router.post('/', async (req, res) => {
         try {
             const newProduct = req.body
@@ -42,7 +42,7 @@ module.exports = (productManager) => {
         }
     })
 
-    // Ruta PUT /api/products/:pid ---- se actualiza un producto
+    // Ruta PUT /api/products/:pid - se actualiza un producto
     router.put('/:pid', async (req, res) => {
         try {
             const productId = parseInt(req.params.pid)
@@ -55,7 +55,7 @@ module.exports = (productManager) => {
         }
     })
 
-    // Ruta DELETE /api/products/:pid ---- se elimina un producto
+    // Ruta DELETE /api/products/:pid - se elimina un producto
     router.delete('/:pid', async (req, res) => {
         try {
             const productId = parseInt(req.params.pid)
